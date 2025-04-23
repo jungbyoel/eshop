@@ -1,0 +1,220 @@
+/* Layout général */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+header button {
+    background: var(--primary);
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+header button:hover {
+    background: var(--primary-hover, #005fa3);
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    padding: 1.5rem 0 0.5rem 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+    color: #666;
+}
+
+footer nav {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Section produits */
+main {
+    margin: 2rem 0;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    padding: 1rem;
+}
+
+/* Card produit */
+article {
+    background: var(--card-background, #fff);
+    color: #222;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    padding: 1.2rem;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s;
+}
+
+article:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+article img {
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    background: #f6f6f6;
+}
+
+article h3 {
+    margin: 0.5rem 0;
+    font-size: 1.15rem;
+    text-align: center;
+}
+
+article p {
+    margin: 0.3rem 0;
+    font-size: 0.98rem;
+}
+
+article button {
+    margin-top: 0.8rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+article button:hover {
+    background: var(--primary-hover, #005fa3);
+}
+
+/* Ratings */
+.ratings {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.ratings span {
+    font-size: 1.1rem;
+}
+
+.ratings .score {
+    margin-left: 0.5rem;
+    color: #555;
+    font-size: 0.98rem;
+}
+
+/* Filtres */
+details[open] summary {
+    border-bottom: 1px solid #eee;
+}
+
+details ul {
+    list-style: none;
+    padding: 0.5rem 0 0 0;
+    margin: 0;
+}
+
+details li {
+    margin-bottom: 0.2rem;
+}
+
+select {
+    margin: 1rem 0 1rem 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    section {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    article {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    header {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    header nav {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    select {
+        width: 100%;
+        max-width: 300px;
+        margin: 1rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    article {
+        width: 95%;
+    }
+    
+    article img {
+        width: 140px;
+        height: 140px;
+    }
+}
